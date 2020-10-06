@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>梦永の博客</title><meta name="description" content="放弃不难，但坚持一定很酷。"><meta name="keywords" content="博客，技术，Java，Android"><meta name="author" content="梦永"><meta name="copyright" content="梦永"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wmy1696.github.io/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="website"><meta property="og:title" content="梦永の博客"><meta property="og:url" content="https://wmy1696.github.io/page/2/"><meta property="og:site_name" content="梦永の博客"><meta property="og:description" content="放弃不难，但坚持一定很酷。"><meta property="og:image" content="https://wmy1696.github.io/img/avatar.png"><meta property="article:published_time" content="2020-10-06T12:01:23.619Z"><meta property="article:modified_time" content="2020-10-06T12:01:23.619Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-10-06 20:01:23'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/wmy1696/cdn/img/2.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">梦永の博客</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">梦永の博客</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/wmy1696" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1311025321@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/59528/" title="《代码整洁之道》笔记">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Beer_celebration_cefj.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《代码整洁之道》笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/59528/" title="《代码整洁之道》笔记">《代码整洁之道》笔记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-17 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a></span></div><div class="content">有意义的命名
+名副其实
+
+避免误导
+
+做出有意义的区分
+
+使用读的出来的名称
+
+使用可搜索的名称
+
+避免使用编码（不要把类型或作用域编进名称）
+
+匈牙利语标记法
+
+
+成员前缀
+接口与实现
+
+
+避免思维映射（不要让人把名称翻译为他们熟知的名称）
+
+类名（名词或名称短语）
+
+方法名（动词或动词短语）
+
+别扮可爱（宁可明确，不要好玩）
+
+每个概念对应一个词
+
+别用双关语
+
+使用解决方案领域名称
+
+使用源自所涉问题领域的名称
+
+添加有意义的语境
+
+不要添加没用的语境
+
+
+函数
+短小（20行封顶最佳）
+
+只做一件事
+
+每个函数一个抽象层级（向下规则）
+
+switch语句（用于创建多态对象，隐藏在某个继承关系）
+
+使用描述性的名称（别怕长名称、命名方式保存一致）
+
+函数参数（理想是0）
+
+一元函数的普遍形式（问参数问题 or 操作参数）
+
+
+标识参数（不要向函数传入布尔值）
+二元函数（两个参数是否有关联–&gt;其中一个变为成员变量）
+三元函数
+参数对象（将参数封装成类）
+参数列表（可变参数）
+
+
+无副作用（不要时序耦合）
+
+
+输出参数（避免使用，改为修改所属对象的状态）
+
+
+分隔指令与询问（函数 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/58909/" title="GitHub Actions">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/shopping_app_flsj.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub Actions"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/58909/" title="GitHub Actions">GitHub Actions</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-16 13:57:48"><i class="far fa-calendar-alt"></i>2020-09-16</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/GitHub/">GitHub</a></span></div><div class="content">GitHub ActionsGitHub Actions 是什么？持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等。GitHub 把这些操作就称为 actions。
+很多操作在不同项目里面是类似的，完全可以共享。GitHub 允许开发者把每个操作写成独立的脚本文件，存放到代码仓库，使得其他开发者可以引用。
+如果你需要某个 action，不必自己写复杂的脚本，直接引用他人写好的 action 即可，整个持续集成过程，就变成了一个 actions 的组合。这就是 GitHub Actions 最特别的地方。
+GitHub 做了一个官方市场，可以搜索到他人提交的 actions。另外，还有一个 awesome actions 的仓库，也可以找到不少 action。
+上面说了，每个 action 就是一个独立脚本，因此可以做成代码仓库，使用userName/repoName的语法引用 action。比如，actions/setup-node就表示github.com/actions/setup-node这个仓库，它代表一个 action，作用是安装 Node ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/25464/" title="GitHub搭建博客">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/happy_music_g6wc.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub搭建博客"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/25464/" title="GitHub搭建博客">GitHub搭建博客</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-16 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-16</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hexo/">Hexo</a></span></div><div class="content">GitHub搭建博客GitHub Pages
+GitHub Pages 是一项静态站点托管服务，它直接从 GitHub 上的仓库获取 HTML、CSS 和 JavaScript 文件（可选），通过构建过程运行文件，然后发布网站。 您可以在 GitHub Pages 示例集合中查看 GitHub Pages 站点的示例。
+可以在 GitHub 的 github.io 域或自己的自定义域上托管站点，要发布用户站点，必须创建名为 &lt;user&gt;.github.io 的用户帐户所拥有的仓库。
+
+HexoHexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。可以进入hexo官网进行详细查看。
+Hexo搭建步骤
+安装Git
+windows：到git官网上下载,Download git,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。
+linux：只需要一行代码
+1sudo apt-get install git
+
+安装Node.js
+Hexo是基于nodeJS编写的，所 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/42790/" title="Android Studio搭配Git">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/dashboard_nklg.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio搭配Git"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/42790/" title="Android Studio搭配Git">Android Studio搭配Git</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-15 22:21:48"><i class="far fa-calendar-alt"></i>2020-09-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android-Studio/">Android Studio</a></span></div><div class="content">AS搭配git安装配置Git下载地址：http://git-scm.com/download/
+安装完成后，在开始菜单里找到“Git”–&gt;“Git Bash”打开即可。
+配置信息：输入你的用户名与邮箱
+12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot;
+
+命令中的 –global 参数表示你这台机器上所有的Git仓库都会使用这个配置。
+AS中配置Git在Android Studio中点击Settings–&gt;Version Control –&gt; Git，然后在Path To Git executable上输入你刚刚安装Git的位置，最后点击Test按钮出现Git executed successfully说明配置成功，
+AS搭配GitHub检查是否有 SSH Keys
+在Git Bash 客户端，输入如下代码：
+123$ cd ~&#x2F;.ssh$ ls--&gt;  id_rsa   ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/50612/" title="Android Studio插件">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/portfolio_update_nqhs.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio插件"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/50612/" title="Android Studio插件">Android Studio插件</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-15 20:21:48"><i class="far fa-calendar-alt"></i>2020-09-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android-Studio/">Android Studio</a></span></div><div class="content">AS插件插件的安装:
+File → Settings → Plugins → 插件名
+GsonFormat将 Json 字符串快速转成 JavaBean 对象，免去我们根据 Json 字符串手写对应 Java Bean 的过程.
+Tips: 可以使用快捷键 alt + s (windows) / option + s (mac)
+Android ButterKnife Zelezny快捷创建实例化控件,配合 butterknife 实现注解，不用再手动实现 findViewById 了。
+
+依赖：
+
+123456implementation &#39;com.jakewharton:butterknife:10.1.0&#39;annotationProcessor &#39;com.jakewharton:butterknife-compiler:10.1.0&#39;compileOptions &#123;  sourceCompatibility JavaVersion.VERSION_1_8  targetCompatibility JavaVersion.VERSION_1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/859/" title="Android Studio快捷键">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/revenue_3osh.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio快捷键"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/859/" title="Android Studio快捷键">Android Studio快捷键</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-15 20:02:34"><i class="far fa-calendar-alt"></i>2020-09-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android-Studio/">Android Studio</a></span></div><div class="content">AS的快捷键断点1234561.F7 --&gt; 跳入2.Ctrl+Shift+F7 --&gt;强制跳入3.F8 --&gt;单步调试4.Ctrl+Shift+F8 --&gt;跳出5.F9 --&gt;跳转到下一个断点处6.Ctrl+Alt+F8 --&gt;查看当前选择的（变量、表达式、函数）值
+
+操作123456789101112131415161.Ctrl+D --&gt;复制当前行2.Ctrl+Y --&gt; 删除当前行3.Alt+Insert --&gt;生成构造器&#x2F;Getter&#x2F;Setter&#x2F;构造函数等--Alt+Fn+F124.Ctrl+Alt+V --&gt;可以引入变量。例如把括号内的SQL赋成一个变量5.Ctrl+Alt+T --&gt;可以把代码包在一块内，例如try&#x2F;catch，if语句等6.Ctrl+Alt+Space --&gt;类名自动完成，自动生成可选变量名，类似于Elipse的（Alt+&#x2F;）快捷键功能7.Ctrl+W --&gt;扩展选择范围，选择单词继而语句继而函数8.Ctrl+Shift+W ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/44799/" title="Git干货">     <img class="post_bg" data-src="https://cdn.jsdelivr.net/gh/wmy1696/cdn/img/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git干货"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/44799/" title="Git干货">Git干货</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-14 13:57:48"><i class="far fa-calendar-alt"></i>2020-09-14</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Git/">Git</a></span></div><div class="content">
+RUNOOB
+Git指令大全
+Learn Git Branching
+
+Git配置配置信息Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。
+这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：
+
+/etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 --system 选项，读写的就是这个文件。
+~/.gitconfig 文件：用户目录下的配置文件只适用于该用户。若使用 git config 时用 --global 选项，读写的就是这个文件。
+当前项目的 Git 目录中的配置文件（也就是工作目录中的 .git/config 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 .git/config 里的配置会覆盖 /etc/gitconfig 中的同名变量。
+
+在 Windows 系统上，Git 会找寻用户主目录下的 .gitconfig 文件。主目录即 $HOME 变量指定的目录，一般都是 C:/Docume ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">梦永</div><div class="author-info__description">放弃不难，但坚持一定很酷。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">17</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">16</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" type="button" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wmy1696" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1311025321@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">王小明的个人博客</div></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="far fa-calendar-alt" aria-hidden="true"></i><span>写作日历</span></div><div class="widget-wrap"></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/posts/18445/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Linux基础" alt="Linux基础"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/18445/" title="Linux基础">Linux基础</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-26 14:57:48">2020-09-26</time></div></a></div><div class="aside-recent-post"><a href="/posts/46705/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="《重构》笔记二" alt="《重构》笔记二"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/46705/" title="《重构》笔记二">《重构》笔记二</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-25 10:57:48">2020-09-25</time></div></a></div><div class="aside-recent-post"><a href="/posts/55426/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="效率工具" alt="效率工具"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/55426/" title="效率工具">效率工具</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-24 10:57:48">2020-09-24</time></div></a></div><div class="aside-recent-post"><a href="/posts/40666/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Shell编程入门" alt="Shell编程入门"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/40666/" title="Shell编程入门">Shell编程入门</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 14:57:48">2020-09-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/45136/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/eating_together_tjhx.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Apache服务器" alt="Apache服务器"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/45136/" title="Apache服务器">Apache服务器</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 10:57:48">2020-09-23</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android-Studio/"><span class="card-category-list-name">Android Studio</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"><span class="card-category-list-name">Android学习路线</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E6%8A%80%E8%83%BD%E6%A0%91/"><span class="card-category-list-name">Android技能树</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">Android项目结构</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="card-category-list-name">Apache服务器</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GitHub/"><span class="card-category-list-name">GitHub</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/Android-Studio/' style='font-size:16px; color:rgb(136, 148, 122)'>Android Studio</a><a href='/tags/Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/' style='font-size:18px; color:rgb(175, 68, 173)'>Apache服务器</a><a href='/tags/Git/' style='font-size:17px; color:rgb(168, 45, 132)'>Git</a><a href='/tags/GitHub/' style='font-size:18px; color:rgb(15, 91, 154)'>GitHub</a><a href='/tags/Hexo/' style='font-size:20px; color:rgb(63, 152, 179)'>Hexo</a><a href='/tags/Learning-Route/' style='font-size:17px; color:rgb(81, 182, 113)'>Learning Route</a><a href='/tags/Linux/' style='font-size:19px; color:rgb(55, 38, 104)'>Linux</a><a href='/tags/Project-Structure/' style='font-size:21px; color:rgb(189, 166, 179)'>Project Structure</a><a href='/tags/Shell/' style='font-size:17px; color:rgb(138, 71, 24)'>Shell</a><a href='/tags/%E3%80%8A%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E3%80%8B/' style='font-size:16px; color:rgb(110, 69, 111)'>《代码整洁之道》</a><a href='/tags/%E3%80%8A%E9%87%8D%E6%9E%84%E3%80%8B/' style='font-size:17px; color:rgb(154, 92, 165)'>《重构》</a><a href='/tags/%E5%9B%BE%E5%BA%8A/' style='font-size:21px; color:rgb(41, 98, 165)'>图床</a><a href='/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%90%91/' style='font-size:17px; color:rgb(27, 14, 86)'>学习方向</a><a href='/tags/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/' style='font-size:20px; color:rgb(29, 52, 50)'>常用插件</a><a href='/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/' style='font-size:16px; color:rgb(172, 96, 174)'>快捷键</a><a href='/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/' style='font-size:21px; color:rgb(8, 27, 160)'>效率工具</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">17</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">17</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 梦永</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><meta name="generator" content="Hexo 4.2.0"></head></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  loadScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js',function () {
+      var subtitleEffect = true
+      jinrishici.load(function (result) {
+        if (subtitleEffect) {
+          var sub = "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".length == 0 ? new Array() : "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".split(',')
+          var content = result.data.content
+          var both = sub.unshift(content)
+          var typed = new Typed('#subtitle', {
+            strings: sub,
+            startDelay: 300,
+            typeSpeed: 150,
+            loop: true,
+            backSpeed: 50,
+          })
+        } else {
+          document.getElementById('subtitle').innerHTML = result.data.content
+        }
+      })
+    }
+  )
+}
+window.addEventListener('load', subtitleType)
+</script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script></body></html>

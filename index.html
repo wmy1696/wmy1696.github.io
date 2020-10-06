@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>梦永の博客</title><meta name="description" content="放弃不难，但坚持一定很酷。"><meta name="keywords" content="博客，技术，Java，Android"><meta name="author" content="梦永"><meta name="copyright" content="梦永"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wmy1696.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="website"><meta property="og:title" content="梦永の博客"><meta property="og:url" content="https://wmy1696.github.io/"><meta property="og:site_name" content="梦永の博客"><meta property="og:description" content="放弃不难，但坚持一定很酷。"><meta property="og:image" content="https://wmy1696.github.io/img/avatar.png"><meta property="article:published_time" content="2020-10-06T12:01:23.610Z"><meta property="article:modified_time" content="2020-10-06T12:01:23.610Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-10-06 20:01:23'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/wmy1696/cdn/img/2.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">梦永の博客</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">梦永の博客</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/wmy1696" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1311025321@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/18445/" title="Linux基础">     <img class="post_bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux基础"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/18445/" title="Linux基础">Linux基础</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-26 14:57:48"><i class="far fa-calendar-alt"></i>2020-09-26</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">
+Linux教程
+
+Linux 文件系统简介在 Linux 操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件。 也就是说在 Linux 系统中有一个重要的概念：一切都是文件。
+其实这是 UNIX 哲学的一个体现，在 UNIX 系统中，把一切资源都看作是文件，Linux 的文件系统也是借鉴 UNIX 文件系统而来。
+inode 介绍inode 是 linux/unix 文件系统的基础。那么，inode 是什么?有什么作用呢?
+硬盘的最小存储单位是扇区(Sector)，块(block)由多个扇区组成。文件数据存储在块中。块的最常见的大小是 4kb，约为 8 个连续的扇区组成（每个扇区存储 512 字节）。一个文件可能会占用多个 block，但是一个块只能存放一个文件。
+虽然，我们将文件存储在了块(block)中，但是我们还需要一个空间来存储文件的 元信息 metadata ：如某个文件被分成几块、每一块在的地址、文件拥有者，创建时间，权限，大小等。这种 存储文件元信息的区域就叫 inode，译为索引节点：i（inde ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/46705/" title="《重构》笔记二">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《重构》笔记二"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/46705/" title="《重构》笔记二">《重构》笔记二</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-25 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-25</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a></span></div><div class="content">封装封装记录</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/55426/" title="效率工具">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="效率工具"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/55426/" title="效率工具">效率工具</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-24 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-24</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a></span></div><div class="content">windows远程桌面win10需要升级到专业版：
+
+点击开始图标，选择设置
+选择更新和安全
+选择激活，更改产品密钥
+
+被控制方设置:
+
+打开系统属性（win+pause）
+进入远程设置
+在远程协助里勾选允许远程协助连接计算，在远程桌面桌面上选择允许运行任意版本远程桌面的计算机连接
+进入用户管理界面，设置账号和密码（必须设置密码）
+查看本机ip
+
+控制方:
+
+打开远程桌面连接（运行-&gt;mstsc）
+输入被控制方的ip地址，然后连接，连接成功之后再输入账号和密码即可
+
+windows sandboxWindows Sandbox正是为“安全地运行应用程序”而量身定制。用户可以在这个独立且封闭的临时桌面环境里，运行不受信任的软件比如未知的exe文件，不会对宿主机系统造成任何影响。因为 Windows Sandbox 中安装的任何软件以及做出的任何文件变动，下次启动时将不复存在。
+开启功能:Windows Sandbox功能需要在18305及更高版本的系统中手动开启，具体路径为控制面板 → 程序和功能 → 启用或关闭Windows功能 → 勾选Windows Sandbox。
+wind ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/40666/" title="Shell编程入门">     <img class="post_bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shell编程入门"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/40666/" title="Shell编程入门">Shell编程入门</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-23 14:57:48"><i class="far fa-calendar-alt"></i>2020-09-23</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Shell/">Shell</a></span></div><div class="content">Shell编程Shell编程就是对一堆Linux命令的逻辑化处理
+Shell 编程的 Hello World学习任何一门编程语言第一件事就是输出HelloWord了！
+(1)新建一个文件 helloworld.sh :touch helloworld.sh，扩展名为 sh（sh代表Shell）（扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了）
+(2) 使脚本具有执行权限：chmod +x helloworld.sh
+(3) 使用 vim 命令修改helloworld.sh文件：vim helloworld.sh(vim 文件——&gt;进入文件—–&gt;命令模式——&gt;按i进入编辑模式—–&gt;编辑文件 ——-&gt;按Esc进入底行模式—–&gt;输入:wq/q! （输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。）)
+helloworld.sh 内容如下：
+123#!&#x2F;bin&#x2F;bash#第一个shell小程序,echo 是linux中的输出命令。echo  &quot;hellowo ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/45136/" title="Apache服务器">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/eating_together_tjhx.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Apache服务器"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/45136/" title="Apache服务器">Apache服务器</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-23 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-23</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/">Apache服务器</a></span></div><div class="content">Apache 和 Tomcat 服务器Apache是Web服务器（静态解析，如HTML），Tomcat是Java应用服务器（动态解析，如JSP）。
+Apache是普通Web服务器，只支持html(静态网页)，通过插件支持PHP，可以与Tomcat连通(Apache单向连接Tomcat，通过Apache可以访问Tomcat资源，反之不然)。Tomcat是JSP/servlet容器，同时也支持HTML、JSP、ASP、PHP、CGI等，其中CGI需要一些手动调试，不过很容易的。 两者都是Apache组织开发、都有HTTP服务的功能、都是开源免费。
+ 如果客户端请求的是静态页面，只需Apache服务器响应请求；如果客户端请求动态页面，则由Tomcat服务器响应请求，将解析的JSP等网页代码解析后回传给Apache服务器，再经Apache返回给客户端端。这是因为JSP是服务器端解释代码的，Tomcat只做动态代码解析，Apache回传解析好的静态代码，Apache+Tomcat整合可以减少Tomcat的服务开销。 
+​    Apache由C语言实现，支持各种特性和模块从而来扩展核心功能；To ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/19452/" title="Android 技能树">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/wind_turbine_x2k4.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android 技能树"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/19452/" title="Android 技能树">Android 技能树</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><time class="post-meta__date" title="发表于 2020-09-21 11:57:48"><i class="far fa-calendar-alt"></i>2020-09-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android%E6%8A%80%E8%83%BD%E6%A0%91/">Android技能树</a></span></div><div class="content">基础知识开发语言
+Kotlin语言基础
+
+《Kotlin实战》
+
+官网
+
+
+
+Java语言基础
+
+《Thinking in Java》
+《Effective Java》
+
+
+C/C++
+
+《C++ Primer Plus》
+
+
+Python
+
+
+计算机基础
+《程序是怎么跑起来的》
+《计算机是怎么跑起来的》
+
+网络相关
+数据安全，加密原理
+反劫持
+传输协议与基本原理
+
+存储与持久化
+数据库Sqlite
+文件IO
+图片加载库，多级缓存
+
+客户端并发
+多线程使用和数据安全
+进程通信IPC
+
+Android开发
+Android Code Style
+Android开发安全实践
+Android应用概述
+Android系统概述
+系统基础
+Handler机制
+进程、线程的本质
+IPC机制
+
+
+
+工程能力系统技术Android 开源技术业务与工具持续更新</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/54128/" title="《重构》笔记一">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《重构》笔记一"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/54128/" title="《重构》笔记一">《重构》笔记一</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-20 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-20</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a></span></div><div class="content">第一组重构提炼函数动机浏览一段代码，理解其作用，然后将其提炼到一个独立的函数中，并以这段代码的用途为这个函数命名。
+何时使用？
+将意图与实现分开，弄清它到底做什么，根据它所做的事为其命名。
+补充：写非常小的函数，不超过6行。
+做法
+创造一个新函数，根据这个函数的意图来对它命名（“做什么”）
+将待提炼的代码从源函数复制到新建的目标函数中
+检查提炼的代码，看看其中是否引用了作用域限于源函数、在提炼函数中访问不到的变量。若是，以参数的形式将它们传递给新的函数。
+所有变量处理完之后，编译。
+在源函数中，将被提炼代码段替换为对目标函数的调用
+测试
+查看其他代码是否有与被提炼的代码段相同或相似之处。若有，考虑使用以函数调用取代内联代码令其调用提炼出新的函数。
+
+范例
+无局部变量：简单
+
+有局部变量（只读取不改）：传递即可
+
+对局部变量再赋值：拆分变量，将其变成临时变量
+若被赋值的临时变量只在提炼代码中使用，一起提炼出去。
+提炼代码之外也用到：首先把变量声明移动到使用处之前，然后把想要提炼的代码复制到目标函数中，修改原来代码，调用新函数。
+
+
+内联函数动机通过内联手法，找出有用的中间层，同时将无用的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/19779/" title="Android 学习路线">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/wind_turbine_x2k4.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android 学习路线"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/19779/" title="Android 学习路线">Android 学习路线</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><time class="post-meta__date" title="发表于 2020-09-18 11:57:48"><i class="far fa-calendar-alt"></i>2020-09-18</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">Android学习路线</a></span></div><div class="content">ProgrammingJavaJava 是 Android App 开发默认的语言, Android Framework 也是默认使用 Java 语言，熟练掌握 Java 语言是 Android 开发者的必备技能。
+
+周志明的《深入理解Java虚拟机（第3版）》
+邓老师的 《深入理解Android Java 虚拟机 ART》
+Effective Java
+
+KotlinGoogle 几年前就开始走 “Kotlin First” 的路线，目前很多官方的文档和 Demo 都是使用 Kotlin 语言作为默认，Kotlin 的重要性不言而喻。
+Google 官方也出了个“Refactoring to Kotlin”的教程,其介绍如下：
+
+此 Codelab 的适用对象为任何使用 Java 并考虑将其项目迁移到 Kotlin 的开发者。我们将从数个 Java 类入手，引导您使用 IDE 将它们转换为 Kotlin。接着，我们会审视转换后的代码，研究如何加以改善，使其更符合使用习惯，同时避免常见错误
+
+Refactoring to Kotlin
+FlutterFlutter 作为 Google  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/64157/" title="Android Project Structure">     <img class="post_bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/eating_together_tjhx.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Project Structure"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/64157/" title="Android Project Structure">Android Project Structure</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-18 10:57:48"><i class="far fa-calendar-alt"></i>2020-09-18</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">Android项目结构</a></span></div><div class="content">
+学习目标：熟悉各种项目结构，资源文件、Gradle文件。
+Java/kotin/Flutter,XML,.gradle files
+
+文件结构解析
+
+.gradle和.idea：AS自动生成的文件
+app：项目中代码资源等内容
+build：编译时自动生成的文件
+gradle：包含了gradle wrapper的配置文件，使用gradle wrapper方式，不需提前将gradle下载好，根据本地缓存情况决定是否联网下载（AS默认开启），也可更改为离线模式：File–&gt;Settings–&gt;Build,Execution,Deloyment–&gt;Gradle
+.gitignore：排除文件版本控制
+build.gradle：项目全局gradle构建脚本
+gradle.properties：全局gradle配置文件，配置相关属性
+gradlew和gradlew.bat：命令行界面执行gradle命令，gradlew在Linux和Mac
+xxx.iml：iml文件是标识这是一个IntelliJ IDEA项目
+local.properties：指定本机SDK路径
+setting ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/47105/" title="GitHub图床">     <img class="post_bg" data-src="https://cdn.jsdelivr.net/gh/wmy1696/cdn/img/SC01C25.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub图床"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/47105/" title="GitHub图床">GitHub图床</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-17 14:57:48"><i class="far fa-calendar-alt"></i>2020-09-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%9B%BE%E5%BA%8A/">图床</a></span></div><div class="content">图床因为在不同平台发布同一篇文章的时候，最一个痛苦的点就是，图片存储问题，各个平台的文件存储方式各不相同，无法直接 Ctrl + C 的方式一键搞定，为了解决这个问题，使用 MarkDown + 图床 的方式进行文章的写作，将图片放到一个统一的地方，在文章中引入图片外链。所谓图床，就是将图片储存到第三方静态资源库中，其返回给你一个 URL 进行获取图片。MarkDown 支持使用 URL 的方式显示图片，我想这也是程序员为什么对其偏爱的原因之一。
+使用流程
+新建 GitHub 仓库（cdn）
+
+生成一个 Token (上传到github验证token)
+
+配置 PicGo 并使用 jsdelivr 作为 CDN 加速
+1https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;wmy1696&#x2F;cdn&#x2F;img&#x2F;SC04C03.jpg &#x2F;&#x2F;格式
+
+使用 Imagine 进行图片压缩
+
+上传图片到 PicGo 并使用图床
+
+
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">梦永</div><div class="author-info__description">放弃不难，但坚持一定很酷。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">17</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">16</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" type="button" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wmy1696" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1311025321@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">王小明的个人博客</div></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="far fa-calendar-alt" aria-hidden="true"></i><span>写作日历</span></div><div class="widget-wrap"></div><div class="widget" id="calendar"></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/posts/18445/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Linux基础" alt="Linux基础"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/18445/" title="Linux基础">Linux基础</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-26 14:57:48">2020-09-26</time></div></a></div><div class="aside-recent-post"><a href="/posts/46705/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="《重构》笔记二" alt="《重构》笔记二"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/46705/" title="《重构》笔记二">《重构》笔记二</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-25 10:57:48">2020-09-25</time></div></a></div><div class="aside-recent-post"><a href="/posts/55426/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Ordinary_day_3gk3.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="效率工具" alt="效率工具"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/55426/" title="效率工具">效率工具</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-24 10:57:48">2020-09-24</time></div></a></div><div class="aside-recent-post"><a href="/posts/40666/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://github.com/Snailclimb/JavaGuide/raw/master/docs/operating-system/images/Linux-Logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Shell编程入门" alt="Shell编程入门"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/40666/" title="Shell编程入门">Shell编程入门</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 14:57:48">2020-09-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/45136/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/eating_together_tjhx.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Apache服务器" alt="Apache服务器"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/45136/" title="Apache服务器">Apache服务器</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 10:57:48">2020-09-23</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android-Studio/"><span class="card-category-list-name">Android Studio</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"><span class="card-category-list-name">Android学习路线</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E6%8A%80%E8%83%BD%E6%A0%91/"><span class="card-category-list-name">Android技能树</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">Android项目结构</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="card-category-list-name">Apache服务器</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GitHub/"><span class="card-category-list-name">GitHub</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/Android-Studio/' style='font-size:16px; color:rgb(136, 148, 122)'>Android Studio</a><a href='/tags/Apache%E6%9C%8D%E5%8A%A1%E5%99%A8/' style='font-size:18px; color:rgb(175, 68, 173)'>Apache服务器</a><a href='/tags/Git/' style='font-size:17px; color:rgb(168, 45, 132)'>Git</a><a href='/tags/GitHub/' style='font-size:18px; color:rgb(15, 91, 154)'>GitHub</a><a href='/tags/Hexo/' style='font-size:20px; color:rgb(63, 152, 179)'>Hexo</a><a href='/tags/Learning-Route/' style='font-size:17px; color:rgb(81, 182, 113)'>Learning Route</a><a href='/tags/Linux/' style='font-size:19px; color:rgb(55, 38, 104)'>Linux</a><a href='/tags/Project-Structure/' style='font-size:21px; color:rgb(189, 166, 179)'>Project Structure</a><a href='/tags/Shell/' style='font-size:17px; color:rgb(138, 71, 24)'>Shell</a><a href='/tags/%E3%80%8A%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E3%80%8B/' style='font-size:16px; color:rgb(110, 69, 111)'>《代码整洁之道》</a><a href='/tags/%E3%80%8A%E9%87%8D%E6%9E%84%E3%80%8B/' style='font-size:17px; color:rgb(154, 92, 165)'>《重构》</a><a href='/tags/%E5%9B%BE%E5%BA%8A/' style='font-size:21px; color:rgb(41, 98, 165)'>图床</a><a href='/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%90%91/' style='font-size:17px; color:rgb(27, 14, 86)'>学习方向</a><a href='/tags/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/' style='font-size:20px; color:rgb(29, 52, 50)'>常用插件</a><a href='/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/' style='font-size:16px; color:rgb(172, 96, 174)'>快捷键</a><a href='/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/' style='font-size:21px; color:rgb(8, 27, 160)'>效率工具</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">17</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">17</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 梦永</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><meta name="generator" content="Hexo 4.2.0"></head></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  loadScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js',function () {
+      var subtitleEffect = true
+      jinrishici.load(function (result) {
+        if (subtitleEffect) {
+          var sub = "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".length == 0 ? new Array() : "学如逆水行舟&#44;不进则退,Learning is like rowing upstream, not to advance is to fall back".split(',')
+          var content = result.data.content
+          var both = sub.unshift(content)
+          var typed = new Typed('#subtitle', {
+            strings: sub,
+            startDelay: 300,
+            typeSpeed: 150,
+            loop: true,
+            backSpeed: 50,
+          })
+        } else {
+          document.getElementById('subtitle').innerHTML = result.data.content
+        }
+      })
+    }
+  )
+}
+window.addEventListener('load', subtitleType)
+</script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script></body></html>
